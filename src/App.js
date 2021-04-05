@@ -11,10 +11,12 @@ import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
 import {connect} from "react-redux"
 import { setCurrentUser } from "./redux/user/user.actions"
 import {selectCurrentUser} from './redux/user/user.selector'
+import {selectCollectionsForPreview} from './redux/shop/shop.selector'
+
 class App extends React.Component {
   unsubscribeFromAuth = null;
   componentDidMount() {
-    const {setCurrentUser} = this.props
+    const {setCurrentUser,collectionsArray} = this.props
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if(userAuth){
         const userRef = await createUserProfileDocument(userAuth)
@@ -32,8 +34,8 @@ class App extends React.Component {
   componentWillUnmount(){
     this.unsubscribeFromAuth();
   }
-
   render() {
+
     return (
       <div>
         <Header/>
@@ -49,7 +51,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
 })
 const mapDispatchToProps = dispatch => ({
   setCurrentUser : user => dispatch(setCurrentUser(user))
