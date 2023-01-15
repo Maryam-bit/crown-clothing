@@ -1,15 +1,4 @@
 
-
- 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/56764144/129733831-13626a77-e3d5-43de-ac74-4de2cd628a37.png" alt="Flowers in Chania" width="150">
-
-  <h1 align="center", fontWeight="900">QUIZoO APP</h1>
-</div>
-
-
 <!-- ABOUT THE PROJECT -->
 ## ABOUT THE PROJECT
 This Project is Made for practicing purpose.
